@@ -57,6 +57,9 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
   try {
+    //Artifically manipulating late fetch
+    console.log("Fetching Latest Card Data");
+    await new Promise((resolve) => setTimeout(resolve, 4000));
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
@@ -78,6 +81,7 @@ export async function fetchCardData() {
     const totalPaidInvoices = formatCurrency(data[2][0].paid ?? "0");
     const totalPendingInvoices = formatCurrency(data[2][0].pending ?? "0");
 
+    console.log("Fetch completed after 4 seconds");
     return {
       numberOfCustomers,
       numberOfInvoices,
