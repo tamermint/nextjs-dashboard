@@ -1,6 +1,5 @@
 import RevenueChart from "../../ui/dashboard/revenue-chart";
 import LatestInvoices from "../../ui/dashboard/latest-invoices";
-import { fetchCardData } from "../../lib/data";
 import { lusitana } from "../../ui/fonts";
 import { Suspense } from "react";
 import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardsSkeleton } from "@/app/ui/skeletons";

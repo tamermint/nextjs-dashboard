@@ -30,7 +30,7 @@ export async function createInvoice(formData: FormData) {
   try {
     await sql`
     INSERT INTO invoices(customer_id, amount, status, date)
-    VALUES(${customerid}, ${amount}, ${status}, ${date})
+    VALUES(${customerid}, ${amountInCents}, ${status}, ${date})
   `;
   } catch (error) {
     console.error(error);
