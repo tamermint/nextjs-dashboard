@@ -8,7 +8,7 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useActionState } from 'react';
-import { authenticate, signInWithGitHub, signInWithGoogle } from '../lib/action';
+import { authenticate } from '../lib/action';
 import { useSearchParams } from 'next/navigation';
 
 export default function LoginForm() {
@@ -77,18 +77,7 @@ export default function LoginForm() {
           )}
         </div>
       </div>
-    <form action={signInWithGoogle} className="mt-3">
-      <input type="hidden" name="redirectTo" value={callbackUrl} />
-      <Button className="w-full" type="submit">
-        Continue with Google
-      </Button>
-    </form>
-    <form action={signInWithGitHub} className="mt-3">
-      <input type="hidden" name="redirectTo" value={callbackUrl} />
-      <Button className="w-full" type="submit">
-        Continue with GitHub
-      </Button>
-    </form>
+    {/* Social login removed as requested */}
   </form>
   );
 }

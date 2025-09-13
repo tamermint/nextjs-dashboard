@@ -117,33 +117,3 @@ export async function authenticate(
     throw error;
   }
 }
-
-export async function signInWithGitHub(formData: FormData) {
-  try {
-    const redirectTo = (formData.get("redirectTo") as string) || "/dashboard";
-    await signIn("github", { redirectTo });
-  } catch (error) {
-    if (error instanceof AuthError) {
-      switch (error.type) {
-        default:
-          return;
-      }
-    }
-    throw error;
-  }
-}
-
-export async function signInWithGoogle(formData: FormData) {
-  try {
-    const redirectTo = (formData.get("redirectTo") as string) || "/dashboard";
-    await signIn("google", { redirectTo });
-  } catch (error) {
-    if (error instanceof AuthError) {
-      switch (error.type) {
-        default:
-          return;
-      }
-    }
-    throw error;
-  }
-}
